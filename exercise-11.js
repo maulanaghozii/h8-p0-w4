@@ -135,7 +135,7 @@ function shoppingTime(memberId, money) {
     //    'Sweater Uniklooh',
     //    'Casing Handphone' ],
     // changeMoney: 0 }
-  console.log(shoppingTime('82Ku8Ma742', 1550000));
+  console.log(shoppingTime('82Ku8Ma742', 170000));
   //{ memberId: '82Ku8Ma742',
   // money: 170000,
   // listPurchased:
