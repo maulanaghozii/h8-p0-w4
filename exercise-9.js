@@ -2,12 +2,12 @@ function checkAB(num) {
     // you can only write your code here!
     let positionA;
     let positionB;
-    for(i=0; i<num.length;i++){
+    for(let i=0; i<num.length;i++){
         // mencari apakah ada karakter 'a' dalam string
         if(num[i] === 'a'){
             positionA = i;
             let distance; //menyimpan jarak antara karakter 'a' dan 'b'
-            for(j=0; j<num.length; j++){
+            for(let j=0; j<num.length; j++){
                 //jalanlan aksi jika terdapat karakter a dan b dalam satu string
                 if(num[i] === 'a' && num[j]==='b'){
                     //menhitung jarak a dan b hasil dalam bilangan bulat positif
@@ -24,7 +24,7 @@ function checkAB(num) {
         } else if(num[i] === 'b'){
             positionB = i;
             let distance; //menyimpan jarak antara karakter 'b' dan 'a'
-            for(j=0; j<num.length; j++){
+            for(let j=0; j<num.length; j++){
                 //jalankan aksi jika terdapat karakter b dan a dalam satu string
                 if(num[i] === 'b' && num[j] === 'a'){
                     //menghitung jarak a dan b hasil dalam bilangan bulat positif
