@@ -1,18 +1,31 @@
 function cariModus(arr) {
     // you can only write your code here!
-    let arrSort = arr.sort(function(value1,value2){return value1 > value2 });
-    let result;
-    let currentValue = arrSort[0];
-    let nextValue    = arrSort[1];
-    for(index = 0; index<arr.length; index++){
-        if(currentValue === nextValue){
-            result = nextValue;
-        } else {
-            currentValue = nextValue;
-            nextValue    = arrSort[index+2];
+    let modus; //menyimpan nilai modus
+    let sumSameValue = 1; //banyaknya nilai yang sama muncul
+    let counter = 0 //
+    let totalCount = 0 // menghitung counter yang ada
+    
+    for(let i = 0; i<arr.length; i++){
+        //mengembalikan kembali 0 pada karakter berikutnya
+        counter = 0;
+        for(let j=0; j<arr.length; j++){
+            if(arr[i]===arr[j]){
+                counter = counter + 1;
+            }
         }
-  }
-  return result;
+        //apabila nilai counter lebih besar dari nilai sumSameValue maka ubah nilai sumSameValue menjadi counter
+        if(counter>sumSameValue){
+            sumSameValue = counter;
+            modus = arr[i];
+        } 
+        totalCount = totalCount + counter;
+    }
+    //apabila semua value dalam arr sama maka anggap tidak ada modus
+    if((totalCount/arr.length) === sumSameValue){
+        modus = -1;
+    }
+    return modus;
+
 }
   
   // TEST CASES
