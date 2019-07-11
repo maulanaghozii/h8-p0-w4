@@ -5,7 +5,7 @@ function angkaPrima(angka) {
     } else if(angka === 2){
         return true;
     } else {
-        for(pembagi=2; pembagi<angka; pembagi++){
+        for(let pembagi=2; pembagi<angka; pembagi++){
             if(angka % pembagi === 0){
                 return false;
             }
