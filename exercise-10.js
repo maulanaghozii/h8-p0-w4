@@ -1,6 +1,6 @@
 function changeMe(arr) {
     // you can only write your code here!
-    for(i=0; i<arr.length; i++){
+    for(let i=0; i<arr.length; i++){
         let ageNow;
         if(arr[i][3]===undefined || arr[i][3]>2019){
             ageNow = 'Invalid Birth Year';
