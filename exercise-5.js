@@ -16,7 +16,7 @@ function ubahHuruf(kata) {
   }
   
   // TEST CASES
-  console.log(ubahHuruf('woz')); // xpx
+  console.log(ubahHuruf('wow')); // xpx
   console.log(ubahHuruf('developer')); // efwfmpqfs
   console.log(ubahHuruf('javascript')); // kbwbtdsjqu
   console.log(ubahHuruf('keren')); // lfsfo
