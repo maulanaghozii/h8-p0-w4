@@ -2,7 +2,7 @@ function cariModus(arr) {
     // you can only write your code here!
     let modus; //menyimpan nilai modus
     let sumSameValue = 1; //banyaknya nilai yang sama muncul
-    let counter = 0 //
+    let counter = 0 // menghitung angka sama yang muncul
     let totalCount = 0 // menghitung counter yang ada
     
     for(let i = 0; i<arr.length; i++){
