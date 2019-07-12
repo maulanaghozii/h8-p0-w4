@@ -15,8 +15,6 @@ function checkAB(num) {
                     //lakukan aksi jika jarak antara a dan b terdapat 3 gap
                     if(distance / 4 === 1){
                         return true
-                    } else{
-                        return false;
                     }
                 }
             }
@@ -32,8 +30,6 @@ function checkAB(num) {
                     // lakukan aksi jika jarak antara a dan b terdapat 3 gap
                     if(distance / 4 === 1){
                         return true;
-                    } else{
-                        return false;
                     }
                 }
             }
@@ -43,6 +39,7 @@ function checkAB(num) {
     if(positionA === undefined || positionB === undefined){
         return false;
     }
+    return false;
 }
   
   // TEST CASES
