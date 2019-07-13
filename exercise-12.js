@@ -1,10 +1,42 @@
 function countProfit(shoppers) {
+  // you can only write your code here!
+  //daftar barang yang sale
     let listBarang = [ ['Sepatu Stacattu', 1500000, 10],
                        ['Baju Zoro', 500000, 2],
                        ['Sweater Uniklooh', 175000, 1]
                      ];
-  
-    // you can only write your code here!
+
+    let result = []; //menampung profit masing masing barang
+    if(shoppers.length > 0){
+      // lakukan perulangan untuk setiap barang yang sale
+      for( let i = 0; i < listBarang.length; i++){
+        //kondisi awal profit setiap daftar belanjaan yang sale
+        let listDataBarang = {
+            product: '',
+            shoppers : [],
+            leftOver : 0,
+            totalProfit : 0 
+        };
+        listDataBarang.product = listBarang[i][0];
+        //lakukan pengulangan untuk cek apakah ada produk di listBarang yang shoppers inginkan
+        for(let j=0; j<shoppers.length; j++){
+          //jika ditemukan, maka cek apakah jumlah barang di toko mencukupi permintaan
+          if(shoppers[j].product === listBarang[i][0]){
+            if(listBarang[i][2] >= shoppers[j].amount){
+              listDataBarang.shoppers.push(shoppers[j].name);
+              listBarang[i][2] = listBarang[i][2] - shoppers[j].amount;
+              listDataBarang.totalProfit = listDataBarang.totalProfit + (shoppers[j].amount * listBarang[i][1]);
+            }
+          }
+        }
+      // barang sisa
+      listDataBarang.leftOver = listBarang[i][2];
+      // masukan listDataBarang ke array result
+      result.push(listDataBarang);
+      }
+
+    }
+    return result
   }
   
   // TEST CASES
