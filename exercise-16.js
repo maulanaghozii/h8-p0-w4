@@ -1,7 +1,7 @@
 function graduates (students) {
     // Code disini
     let result = {}; //variable untuk menampung hasil akhir
-    let classes = []; //untuk set key class dalam object result
+    let classes = ''; //untuk set key class dalam object result
     //lekukan pengulangan pada array student
     let amountStudents = students.length; //jumlah siswa
     for(let i=0; i<amountStudents; i++){
