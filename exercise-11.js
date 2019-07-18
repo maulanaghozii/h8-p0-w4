@@ -4,7 +4,7 @@ function shoppingTime(memberId, money) {
     let changeMoney = money; //variable kembalian/sisa uang. kita asumsikan kembalian adalah uang yg kita miliki dari awal.
     //daftar product yang sedang sale
     const productSale = {
-        product : [['Sepatu Stacattu', 1500000],[['Baju Zoro'],500000],[['Baju H&N'],250000],[['Sweater Uniklooh'], 175000],[['Casing Handphone'], 50000]]
+        product : [['Sepatu Stacattu', 1500000],['Baju Zoro',500000],['Baju H&N',250000],['Sweater Uniklooh', 175000],['Casing Handphone', 50000]]
     }
     let amountProduct = productSale.product.length; //variable menampung banyaknya product yang sale
     if(memberId === '' || memberId === undefined){
