@@ -1,118 +1,26 @@
 function shoppingTime(memberId, money) {
     // you can only write your code here!
-    let arrListPurchased = [];
-    let changeMoney;
+    let arrListPurchased = [];//variable penampung brand yg dapat dibeli
+    let changeMoney = money; //variable kembalian/sisa uang. kita asumsikan kembalian adalah uang yg kita miliki dari awal.
+    //daftar product yang sedang sale
+    const productSale = {
+        product : [['Sepatu Stacattu', 1500000],[['Baju Zoro'],500000],[['Baju H&N'],250000],[['Sweater Uniklooh'], 175000],[['Casing Handphone'], 50000]]
+    }
+    let amountProduct = productSale.product.length; //variable menampung banyaknya product yang sale
     if(memberId === '' || memberId === undefined){
         return 'Mohon maaf, toko X hanya berlaku untuk member saja';
-    } else if(money < 50000){
+    } else if(money < productSale.product[amountProduct - 1][1]){
         return 'Mohon maaf, uang tidak cukup';
     } else {
-        if (money>=1500000){
-            arrListPurchased.push('Sepatu Staccatu');
-            changeMoney = money-1500000;
-            if(changeMoney>=500000 && changeMoney<1500000){
-                arrListPurchased.push('Baju Zoro');
-                changeMoney = changeMoney - 500000;
-                if(changeMoney>=250000 && changeMoney<500000){
-                    arrListPurchased.push('Baju H&N')
-                    changeMoney = changeMoney - 250000;
-                    if(changeMoney>=175000 && changeMoney<250000){
-                        arrListPurchased.push('Sweater Uniklooh')
-                        changeMoney = changeMoney-175000;
-                        if(changeMoney>=50000 && changeMoney<175000){
-                            arrListPurchased.push('Cashing Handpone')
-                            changeMoney = changeMoney-50000;
-                        }
-                    } else if(changeMoney>=50000 && changeMoney<175000){
-                        arrListPurchased.push('Cashing Handpone')
-                        changeMoney = changeMoney-50000;
-                    }
-                }else if(changeMoney>=175000 && changeMoney<250000){
-                    arrListPurchased.push('Sweater Uniklooh')
-                        changeMoney = changeMoney-175000;
-                        if(changeMoney>=50000 && changeMoney<175000){
-                            arrListPurchased.push('Cashing Handpone')
-                            changeMoney = changeMoney-50000;
-                        }
-                }else if(changeMoney>=50000 && changeMoney<175000){
-                    arrListPurchased.push('Cashing Handpone')
-                    changeMoney = changeMoney-50000;
-                }
-            }else if(changeMoney>=250000 && changeMoney<500000){
-                arrListPurchased.push('Baju H&N')
-                    changeMoney = changeMoney - 250000;
-                    if(changeMoney>=175000 && changeMoney<250000){
-                        arrListPurchased.push('Sweater Uniklooh')
-                        changeMoney = changeMoney-175000;
-                        if(changeMoney>=50000 && changeMoney<175000){
-                            arrListPurchased.push('Cashing Handpone')
-                            changeMoney = changeMoney-50000;
-                        }
-                    }
-            } else if(changeMoney>=175000 && changeMoney<250000){
-                arrListPurchased.push('Sweater Uniklooh')
-                changeMoney = changeMoney-175000;
-                if(changeMoney>=50000 && changeMoney<175000){
-                    arrListPurchased.push('Cashing Handpone')
-                    changeMoney = changeMoney-50000;
-                }
-            } else if(changeMoney>=50000 && changeMoney<175000){
-                arrListPurchased.push('Cashing Handpone')
-                changeMoney = changeMoney-50000;
+        for(let i = 0; i<amountProduct; i++){
+            let price = productSale.product[i][1];
+            let brand = productSale.product[i][0];
+            if(changeMoney >= price){
+                arrListPurchased.push(brand);
+                changeMoney = changeMoney - price;
             }
-        } else if(money>=500000 && money<1500000){
-            arrListPurchased.push('Baju Zoro');
-            changeMoney = money-500000;
-            if(changeMoney>=250000 && changeMoney<500000){
-                arrListPurchased.push('Baju H&N')
-                changeMoney = changeMoney - 250000;
-                if(changeMoney>=175000 && changeMoney<250000){
-                    arrListPurchased.push('Sweater Uniklooh')
-                    changeMoney = changeMoney-175000;
-                    if(changeMoney>=50000 && changeMoney<175000){
-                        arrListPurchased.push('Cashing Handpone')
-                        changeMoney = changeMoney-50000;
-                    }
-                }else if(changeMoney>=50000 && changeMoney<175000){
-                    arrListPurchased.push('Cashing Handpone')
-                    changeMoney = changeMoney-50000;
-                }
-            }else if(changeMoney>=175000 && changeMoney<250000){
-                arrListPurchased.push('Sweater Uniklooh')
-                    changeMoney = changeMoney-175000;
-                    if(changeMoney>=50000 && changeMoney<175000){
-                        arrListPurchased.push('Cashing Handpone')
-                        changeMoney = changeMoney-50000;
-                    }
-            }else if(changeMoney>=50000 && changeMoney<175000){
-                arrListPurchased.push('Cashing Handpone')
-                changeMoney = changeMoney-50000;
-            }
-        } else if(money>=250000 && money<500000){
-            arrListPurchased.push('Baju H&N');
-            changeMoney = money-250000;
-            if(changeMoney>=175000 && changeMoney<250000){
-                arrListPurchased.push('Sweater Uniklooh')
-                changeMoney = changeMoney-175000;
-                if(changeMoney>=50000 && changeMoney<175000){
-                    arrListPurchased.push('Cashing Handpone')
-                    changeMoney = changeMoney-50000;
-                }
-            } else if(changeMoney>=50000 && changeMoney<175000){
-                arrListPurchased.push('Cashing Handpone')
-                changeMoney = changeMoney-50000;
-            }
-        } else if(money>=175000 && money<250000){
-            arrListPurchased.push('Sweater Uniklooh');
-            changeMoney = money-175000;
-            if(changeMoney>=50000 && changeMoney<175000){
-                arrListPurchased.push('Cashing Handpone')
-                changeMoney = changeMoney-50000;
-            }
-        } else{
-            arrListPurchased.push('Casing Handpone');
-            changeMoney = money-50000;
         }
+        
     }
 
     let objShoping ={
